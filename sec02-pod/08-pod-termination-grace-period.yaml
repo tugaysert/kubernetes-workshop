@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  restartPolicy: Never
+  # Aksi takdirde eğer podu silsek bile container uyumaya devam edecek alltaki komuta ithafen.
+  # Böylece yalnızca 1 sn bekleyecek container silinecek.
+  terminationGracePeriodSeconds: 1
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    args:
+    - "sleep"
+    - "3600"
+
+
+
