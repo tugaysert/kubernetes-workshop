@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    args:
+    - "/bin/sh"
+    - "-c"
+    - "echo This is my path: $PATH"
+    # cli'a gir, şu kodu yazdır: This is my path: $PATH
+
+
