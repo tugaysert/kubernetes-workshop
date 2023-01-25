@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: entrypoint
+    image: vinsdocker/k8s-entrypoint
+    # yukarıdaki image'ın içerisinde entrypoint olarak başka bir method bulunmakta.
+    # eğer args kullanırsak onu override edemeyeceğiz bu sebeple command kullandık ve ezdik.
+    command:
+    - "date"
+
+
+
